@@ -1,17 +1,7 @@
-import Button from 'react-bootstrap/Button';
 import React from 'react';
 import PropTypes from 'prop-types';
-
-const JokerAvailable = ({ handleJoker, name }) => (
-  <Button variant="success" onClick={handleJoker}>
-    {name}
-  </Button>
-);
-const JokerUnavailable = ({ name }) => (
-  <Button variant="danger" disabled>
-    {name}
-  </Button>
-);
+import JokerAvailable from './JokerAvailable';
+import JokerUnavailable from './JokerUnavailable';
 
 const Jokers = ({
   jokers,
@@ -37,15 +27,6 @@ const Jokers = ({
     )}
   </div>
 );
-
-JokerAvailable.propTypes = {
-  handleJoker: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-};
-
-JokerUnavailable.propTypes = {
-  name: PropTypes.string.isRequired,
-};
 
 Jokers.propTypes = {
   handleJokerCall: PropTypes.func.isRequired,

@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
 const GameMenu = ({ question, children }) => (
@@ -28,28 +26,10 @@ const GameMenu = ({ question, children }) => (
     </Container>
   </div>
 );
-const GameMenuAnswer = ({ handleQuestionAnswer, answer }) => (
-  <Col>
-    <Button
-      variant="dark"
-      size="lg"
-      onClick={(e) => {
-        handleQuestionAnswer(e, answer);
-      }}
-      type="submit"
-    >
-      {answer}
-    </Button>
-  </Col>
-);
+
 GameMenu.propTypes = {
   question: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
-GameMenuAnswer.propTypes = {
-  handleQuestionAnswer: PropTypes.func.isRequired,
-  answer: PropTypes.string.isRequired,
-};
-GameMenu.Answer = GameMenuAnswer;
 
 export default GameMenu;
