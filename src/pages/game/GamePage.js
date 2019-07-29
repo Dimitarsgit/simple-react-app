@@ -1,9 +1,7 @@
 import React from 'react';
 import GameContainer from '../../modules/game/GameContainer';
 
-const GamePage = () => (
-  <GameContainer />
-);
+const GamePage = () => <GameContainer />;
 
 GamePage.propTypes = {};
 

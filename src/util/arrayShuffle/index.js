@@ -1,5 +1,6 @@
 export default function shuffleArray(arr) {
-  let ctr = arr.length;
+  let result = arr.slice();
+  let ctr = result.length;
   let temp;
   let index;
 
@@ -10,9 +11,9 @@ export default function shuffleArray(arr) {
     // Decrease ctr by 1
     ctr--;
     // And swap the last element with it
-    temp = arr[ctr];
-    arr[ctr] = arr[index];
-    arr[index] = temp;
+    temp = result[ctr];
+    result[ctr] = result[index];
+    result[index] = temp;
   }
-  return arr;
+  return result;
 }
