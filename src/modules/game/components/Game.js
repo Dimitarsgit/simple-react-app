@@ -4,7 +4,8 @@ import ProgressMenu from './ProgressMenu';
 import GameMenu from './GameMenu';
 import ConfirmModal from '../../modal/ConfirmModal';
 import JokerModal from '../../modal/JokerModal';
-import Jokers from './Jokers';
+import Jokers from './jokers/Jokers';
+import GameAnswer from './GameAnswer';
 
 const Game = ({
   questions,
@@ -47,7 +48,7 @@ const Game = ({
     </div>
     <GameMenu question={currentQuestion.getQuestion()}>
       {currentQuestion.getAnswers().map((answer, index) => (
-        <GameMenu.Answer
+        <GameAnswer
           key={index}
           answer={answer}
           handleQuestionAnswer={() => handleQuestionAnswer(answer)}
