@@ -10,17 +10,17 @@ const Jokers = ({
   handleJokerHalf,
 }) => (
   <div>
-    {jokers.call ? (
+    {jokers.call.available ? (
       <JokerAvailable handleJoker={handleJokerCall} name="Call" />
     ) : (
       <JokerUnavailable name="Call" />
     )}
-    {jokers.half ? (
+    {jokers.half.available ? (
       <JokerAvailable handleJoker={handleJokerHalf} name="50/50" />
     ) : (
       <JokerUnavailable name="50/50" />
     )}
-    {jokers.audience ? (
+    {jokers.audience.available ? (
       <JokerAvailable handleJoker={handleJokerAudience} name="Audience" />
     ) : (
       <JokerUnavailable name="Audience" />
@@ -33,9 +33,15 @@ Jokers.propTypes = {
   handleJokerAudience: PropTypes.func.isRequired,
   handleJokerHalf: PropTypes.func.isRequired,
   jokers: PropTypes.shape({
-    call: PropTypes.bool.isRequired,
-    audience: PropTypes.bool.isRequired,
-    half: PropTypes.bool.isRequired,
+    call: PropTypes.shape({
+      available: PropTypes.bool,
+    }),
+    audience: PropTypes.shape({
+      available: PropTypes.bool,
+    }),
+    half: PropTypes.shape({
+      available: PropTypes.bool,
+    }),
   }).isRequired,
 };
 

@@ -3,13 +3,13 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 
-const GameAnswer = ({ handleQuestionAnswer, answer }) => (
+const GameMenuAnswer = ({ handleQuestionAnswer, answer }) => (
   <Col>
     <Button
       variant="dark"
       size="lg"
-      onClick={(e) => {
-        handleQuestionAnswer(e, answer);
+      onClick={() => {
+        handleQuestionAnswer(answer);
       }}
       type="submit"
     >
@@ -18,9 +18,9 @@ const GameAnswer = ({ handleQuestionAnswer, answer }) => (
   </Col>
 );
 
-GameAnswer.propTypes = {
+GameMenuAnswer.propTypes = {
   handleQuestionAnswer: PropTypes.func.isRequired,
   answer: PropTypes.string.isRequired,
 };
 
-export default GameAnswer;
+export default GameMenuAnswer;

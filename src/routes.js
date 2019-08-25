@@ -10,7 +10,7 @@ const Routes = () => (
     <Route exact path="/" component={HomePage} />
     <Route exact path="/game" component={GamePage} />
 
-    <Route path="/" component={NotFoundPage} />
+    <Route path="*" component={NotFoundPage} />
   </Switch>
 );
 export default Routes;
