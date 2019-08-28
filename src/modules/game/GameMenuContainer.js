@@ -105,7 +105,6 @@ function GameMenuContainer() {
 Sure price: $
         {surePrice}
       </h1>
-      <h2>{currentQuestion.getCorrectAnswer()}</h2>
       <GameMenu
         currentQuestion={currentQuestion}
         handleQuestionAnswer={handleQuestionAnswer}
